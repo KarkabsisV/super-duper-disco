@@ -1,138 +1,152 @@
 <!DOCTYPE html>
-<html lang=en>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>My site</title>
+    <title>My Super Site</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+    
 </head>
 
 <body>
-<h1>Hello world!&reg;</h1>
-<h2>Hello world!&lt;</h2>
-<h3>Hello world!&lt;</h3>
-<h4>Hello world!&lt;</h4>
-<h5>Hello world!&lt;</h5>
-<h6>Hello world!&lt;</h6>
-<br>
-<hr>
-<a href="http://www.google.com">Go to Google!</a>
-<hr>
-<p>This is a
-     <b>
-         <i>wrong way</i>
-     to make nested tags.
-    </b>
-</p>
-<hr>
-<p>
-    This is a
-     <strong>
-         <em>wrong way</em>
-     to make nested <small>tags.</small>
-     </strong>
-</p>
-<hr>
-<img src="cat.png" alt="Some cat" width="640" height="360">
-<img src="cat.png" alt="Some cat" width="640" height="360">
-
-<figure>
-    <img src="cat.png" alt="Some cat" width="640" height="360">
-    <img src="cat.png" alt="Some cat" width="640" height="360">
-    <figcaption>Some cat</figcaption>
-</figure>
-<hr>
-<video src="pig.mp4"
-width="400"
-height="400"
-autoplay
-controls
-poster="cat.png"></video>
-<hr>
-<div id="test">
-    <p>This is div</p>
-</div>    
-<hr>
-<main>
-    <header>
-        <h3>This is header</h3>
-        <nav>
-            <a href="http://www.google.com">Go to Google!</a> 
-        </nav>
+    <h1>Hello World!! &reg; &lt; </h1>
+    <h2>Hello World!! &reg; &lt; </h2>
+    <h3>Hello World!! &reg; &lt; </h3>
+    <h4>Hello World!! &reg; &lt; </h4>
+    <h5>Hello World!! &reg; &lt; </h5>
+    <h6>Hello World!! &reg; &lt; </h6>
+    <hr>
+    <a href="https://google.com/">Go to Google!</a>
+    <p>
+        This is a
+        <b>
+            <i>
+                right way
+            </i>
+            to make nested tags.
+        </b>
+    </p>
+    <p class="second">
+        This is a
+        <strong>
+            <em>
+                right way
+            </em>
+            to make <small>nested tags</small>.
+        </strong>
+    </p>
+    <hr>
+    <figure>
+        <img src="cat.png" alt="Pretty cat" width="640" height="360">
+        <img src="cat.png" alt="Pretty cat" width="640" height="360">
+        <figcaption>Pretty cats</figcaption>
+    </figure>
+    <hr>
+    <video src="pig.mp4" width="400" height="300" autoplay controls
+        poster="cat.png">
+    </video>
+    <hr>
+    <div id="test">
+        <p id="cool">this is cool dive content</p>
+    </div>
+    <hr>
+    <main>
+        <header>
+            <h3>This is sematic header</h3>
         </header>
+        <nav>
+            <a href="https://google.com/">Google</a>
+        </nav>
         <article>
             <header>
-                <h5>Header for article</h5>
+                <h5>Article header</h5>
             </header>
             <section>
-                <p>Section`s content</p>
+                <p>Content of section</p>
             </section>
         </article>
-</main>
-<hr>
-<table border="1">
-    <tr>
-        <th>First</th>
-        <th>Second</th>
-        <th>Third</th>
-    </tr>
-    <tr>
-        <th>First</th>
-        <th>Second</th>
-        <th>Third</th>
-    </tr>
-    <tr>
-        <th>First</th>
-        <th>Second</th>
-        <th>Third</th>
-    </tr>
-</table>
-<hr>
-<table border="2">
-    <thead>
-        <tr>
-        <th rowspan="2"></th>
-        <th colspan="2">&nbsp;</th>
-        </tr>
+    </main>
+    <hr>
+    <table border="1">
         <tr>
             <th>First</th>
             <th>Second</th>
             <th>Third</th>
         </tr>
-    </thead>
-
-    <tbody>
         <tr>
-            <td>First</td>
-            <td>Second</td>
-            <td>Third</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
         </tr>
-    </tbody>
-
-
-</table>
-<hr>
-<ol reversed start="5" type="i">
-    <li>First</li>
-    <li>Second</li>
-    <li>Third</li>
-</ol>
-<hr>
-<ul type="square">
-    <li>First</li>
-    <li>Second</li>
-    <li>Third</li>
-</ul>
-<hr>
-<form id="feedback">
-    <fieldset>
-        <lable for="email">Your E-mail:</lable>
-        <input type="email" required placeholder="mail@gmail.com" name="email"/>
-    </fieldset>
-    <fieldset>
-        <lable for="Message">Message:</lable>
-        <input type="text" name="Message" autofocus/>
-    </fieldset>
-</form>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+    </table>
+    <hr>
+    <table border="1">
+        <thead>
+            <tr>
+                <th rowspan="2">&nbsp;</th>
+                <th colspan="4">&nbsp;</th>
+            </tr>
+            <tr>
+                <th>I</th>
+                <th>II</th>
+                <th>III</th>
+                <th>IIII</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>&nbsp;</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+        </tbody>
+    </table>​
+    <hr>
+    <ol start="10" type="I">
+        <li>First</li>
+        <li>Second</li>
+        <li>Third</li>
+    </ol>
+    <hr>
+    <ul type="circle">
+        <li>First</li>
+        <li>Second</li>
+        <li>Third</li>
+    </ul>
+    <hr>
+    <form id="feedback">
+        <fieldset>
+            <label for="email">Your E-mail</label>
+            <input type="email" name="email" required placeholder="mail@google.com" autofocus/>
+        </fieldset>
+        <fieldset>
+            <label for="message">Message</label>
+            <input type="text" name="message"/>
+        </fieldset>
+    </form>
+    <hr>
+    <div class="container">
+        <p id="hello">Hello!</p>
+    </div>
+    <hr> 
+    <p class="inherit">This paragraph has 
+        <em>emphasized text</em>
+        in it.</p>
 
 </body>
+<p id="cool"> Some cool id</p>
 
 </html>
