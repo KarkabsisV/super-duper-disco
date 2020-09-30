@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Flexible Child Box</title>
+        <style>
+            .container {
+                display: flex;
+                /*flex-direction: row;*/
+                flex-wrap: wrap;
+                flex-flow: row wrap;
+                /* justify-content: space-around;*/
+               /* height: 500px;*/
+                outline: 2px solid silver;
+                width: 800px;
+            }
+            .box1, .box2, .box3, .box4 {
+                /* flex: 1 auto;  */
+                color: white;
+                background: tomato;
+                max-width: 200;
+                outline: 1px solid black;
+                box-shadow: 10px 10px 3px gray;
+            }
+
+                   
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <p class="box1"><figure>
+                <img src="cat.png" alt="Anabele" width="50" height="50">
+                <figcaption>Anabele</figcaption>
+                </figure></p>
+            <p class="box2"><figure>
+                <img src="cat.png" alt="Anabele" width="50" height="50">
+                <figcaption>Anabele</figcaption>
+                </figure></p>
+            <p class="box3"><figure>
+                <img src="cat.png" alt="Anabele" width="50" height="50">
+                <figcaption>Anabele</figcaption>
+                </figure></p>
+            <p class="box3"><figure>
+                <img src="cat.png" alt="Anabele" width="50" height="50">
+                <figcaption>Anabele</figcaption>
+                </figure></p>
+            <!-- <div class="box box5">
+                <p>This is the subchild 1</p>
+                <p>This is the subchild 2</p>
+            </div> -->
+        </div>
+    </body>
+</html>
+
