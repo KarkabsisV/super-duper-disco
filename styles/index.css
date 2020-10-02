@@ -25,7 +25,3 @@ a + p {
 ol > li {
     display: inline;
 }
-
-p.inherit {
-    color: green; border: medium solid;
-}
