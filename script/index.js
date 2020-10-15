@@ -174,11 +174,96 @@ snizok.run();
 
 // helloCont.onclick = showHello;
 
-hello.addEventListener("click", function(e){
-    console.log("hello conteiner clicked!")
+// helloCont.addEventListener("click", function(e){
+//     console.log("hello conteiner clicked!")
+//     e.stopPropagation();
+// }, true);
+
+// hello.addEventListener("click", function(e){
+//     console.log("hello clicked!")
+//     console.log(e);
+// }, true);
+
+
+///Ajax
+
+//sep 1 https://api.chucknorris.io/
+// var xhr = new XMLHttpRequest();
+
+// //step2  в середині функції очікується успішний запит 
+// xhr.onreadystatechange = function() {
+//     if (xhr.readyState === 4 && xhr.status === 200) {
+//         //console.log(xhr.responseText); 1
+//         console.log(JSON.parse(xhr.responseText).value);2
+//     }
+// }
+
+// xhr.open('GET', 'https://api.chucknorris.io/jokes/random');// нам прийшов об'єкт але по факту це велика строка
+
+// //step 3
+
+// xhr.send();
+
+//кнопка
+
+showJSA.onclick = function(){
+    var xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            //console.log(xhr.responseText); 1
+            // console.log(JSON.parse(xhr.responseText).value);2
+            hello.innerHTML = JSON.parse(xhr.responseText).value;
+        }
+    }
+
+    xhr.open('GET', 'https://api.chucknorris.io/jokes/random');// нам прийшов об'єкт але по факту це велика строка
+
+
+
+    xhr.send();
+
+
+};
+helloCont.onclick = showHello;
+
+helloCont.addEventListener("click", function(e){
+    fetch('https://api.chucknorris.io/jokes/random').then(function(response){
+        // console.log(response);//1
+        return response.json();
+
+    })
+    .then(function(json){
+        // console.log(json); //2
+        hello.innerHTML = json.value;
+    })
+    .catch(function(err){//3
+        console.log(err);
+    });
+    e.stopPropagation();
 }, true);
 
 hello.addEventListener("click", function(e){
     console.log("hello clicked!")
     console.log(e);
 }, true);
+
+////fetch POST
+btnsend.addEventListener('click', function(){
+    fetch('https://formspree.io/YOUR_EMAIL@HERE',{
+        method: 'POST',
+        body: JSON.stringify(
+            {
+                email: feedback.email.value,
+                message: feedback.message.value 
+            }
+        ),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+
+    }).then(function(response){
+        console.log(response.status)
+
+    });
+})
