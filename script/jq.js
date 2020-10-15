@@ -9,7 +9,7 @@
 
 // });
 
-$('p').on({
-    'click': function() {console.log('clicked!!')},
-    'mouseover': function() {console.log('Hovered!!!!');}
- });
+// $('p').on({
+//     'click': function() {console.log('clicked!!')},
+//     'mouseover': function() {console.log('Hovered!!!!');}
+//  });

@@ -182,3 +182,89 @@ hello.addEventListener("click", function(e){
     console.log("hello clicked!")
     console.log(e);
 }, true);
+
+
+////Ajax
+
+// //step1
+
+// var xhr = new XMLHttpRequest();
+
+// //step 2
+
+// xhr.onreadystatechange = function() {
+//     if (xhr.readyState === 4 && xhr.status === 200) {
+//         //console.log(xhr.responseText);
+//         console.log(JSON.parse(xhr.responseText).value);
+//     }
+// }
+
+// xhr.open('GET', 'https://api.chucknorris.io/jokes/random');
+
+// // step3
+// xhr.send();
+
+showJSA.onclick = function() {
+    var xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+        //console.log(xhr.responseText);
+        //console.log(JSON.parse(xhr.responseText).value);
+        hello.innerHTML = JSON.parse(xhr.responseText).value;
+        }
+    }
+
+    xhr.open('GET', 'https://api.chucknorris.io/jokes/random');
+
+
+    xhr.send();
+};
+
+//fetch
+
+helloCont.onclick = showHello;
+
+helloCont.addEventListener("click", function(e){
+    fetch('https://api.chucknorris.io/jokes/random').then(function(response){
+        //console.log(response);
+        return response.json();
+    })
+    .then(function(json){
+        //console.log(json);
+        hello.innerHTML = json.value;
+    })
+    .catch(function(err) {
+        console.log(err);        
+    });   
+
+    
+}, true);
+
+hello.addEventListener("click", function(e){
+    console.log("hello clicked!")
+    console.log(e);
+}, true);
+
+
+// fetch POST
+
+
+btnsend.addEventListener('click', function() {
+    fetch('https://formspree.io/YOUR_EMAIL@HERE',{
+        method: 'POST',
+        body: JSON.stringify(
+            {
+                email: feedback.email.value,
+                message: feedback.message.value
+            }
+
+        ),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(function(response){
+        console.log(response.status)
+    });
+    
+})
