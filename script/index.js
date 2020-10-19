@@ -1,9 +1,10 @@
+//"use_strict";
 // alert("Hello!") //my first alert
 
 var b = true;
 
-var str = "Hello Js!"
-var str1 = 'Hello Js!2'
+let str = "Hello Js!"
+let str1 = 'Hello Js!2'
 
 function addNumbers(one, two) {
     return one + two;
@@ -152,13 +153,13 @@ for(k in dic){
 function Cat(name){
     this.name = name;
     this.run = function() {
-        console.log(this.name + "runs!");
+        console.log(this.name + " runs!");
     };
     return this;
 }
 
-var murzik = new Cat("Murzik");
-var snizok = new Cat("Snizok");
+let murzik = new Cat("Murzik");
+let snizok = new Cat("Snizok");
 
 murzik.run();
 snizok.run();
@@ -225,18 +226,17 @@ showJSA.onclick = function() {
 
 helloCont.onclick = showHello;
 
-helloCont.addEventListener("click", function(e){
-    fetch('https://api.chucknorris.io/jokes/random').then(function(response){
-        //console.log(response);
-        return response.json();
-    })
-    .then(function(json){
+helloCont.addEventListener("click", (e) => {
+    fetch('https://api.chucknorris.io/jokes/random')
+    .then((response) => response.json())
+    .then((json) => {
         //console.log(json);
         hello.innerHTML = json.value;
     })
-    .catch(function(err) {
+    .catch((err) => {
         console.log(err);        
-    });   
+    });
+    
 
     
 }, true);
@@ -268,3 +268,136 @@ btnsend.addEventListener('click', function() {
     });
     
 })
+
+////
+const city = 'Kyiv'
+
+//city = 'Zhytomr'
+
+////
+
+// function Person(age) {
+//     // var that = this;
+//     this.age = age;
+//     setInterval(function growUp() {
+//         that.age++;
+//         console.log(this.age);
+
+//     }, 1000);
+// }
+
+// var p = new Person(27);
+
+// function Person(age) {
+//     this.age = age;
+//     setInterval( () => {
+//         this.age++;
+//         console.log(this.age);
+
+//     }, 1000);
+// }
+
+// var p = new Person(27);
+
+const name = 'Vitalii';
+const someString = `<p>Hello, ${name}</p>
+<p>Goodbye!</p>`;
+
+hello.innerHTML = someString;
+
+///
+
+const obj = {first: 'Jhon', last: 'Smith'};
+
+// var first = obj['first'];
+// var last = obj['last'];
+
+let {first, last} = obj;
+console.log(first);
+
+const {first: l} = obj;
+console.log(l);
+
+
+///
+// function Cat(name){
+//     this.name = name;
+//     this.run = function() {
+//         console.log(this.name + " runs!");
+//     };
+//     return this;
+// }
+
+// let murzik = new Cat("Murzik");
+// let snizok = new Cat("Snizok");
+
+// murzik.run();
+// snizok.run();
+
+class Dog {
+    constructor(name, color){
+        this.name = name;
+        this.color = color;
+    }
+
+    run(){
+        console.log(this.name + " runs!");
+    }
+}
+
+
+class GuardDog extends Dog {
+    constructor(name, color, runSpeed) {
+        super(name, color);
+        this.runSpeed = runSpeed;
+    }
+
+    guard() {
+        console.log(`I will run at ${this.runSpeed} km/s and bite you!`);
+    }
+}
+
+const dog = new Dog("Rex", "black");
+dog.run();
+
+const gDog = new GuardDog('Jack', 'white', 30);
+gDog.run();
+gDog.guard();
+
+////
+
+const prom = new Promise((resolve, reject) => {
+    setTimeout(()=>{
+        const number = Math.random() * 100;
+        if (number > 90) {
+            reject("big number");
+        } else {
+            resolve(number);
+        }
+    }, 3000);
+});
+
+
+async function myCoolAsync() {
+    return prom;
+}
+
+prom.then((res) =>{
+    return res*2;
+}).then((otherRes)=> {
+    console.log(otherRes);
+}).catch(err => {
+    console.log('I fixed the error: ' +err);
+}).finally(text =>{
+    console.log(text);
+});
+
+
+const myTestFun = async () => {
+    const z = await myCoolAsync();
+    alert(z * 2);
+};
+
+(async function main() {
+    myTestFun();
+})();
