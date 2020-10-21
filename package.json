@@ -1,0 +1,19 @@
+{
+  "name": "super-duper-disco",
+  "version": "1.0.0",
+  "description": "My example",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KarkabsisV/super-duper-disco.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KarkabsisV/super-duper-disco/issues"
+  },
+  "homepage": "https://github.com/KarkabsisV/super-duper-disco#readme"
+}
