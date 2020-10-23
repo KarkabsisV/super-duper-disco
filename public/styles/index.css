@@ -1,0 +1,27 @@
+p {
+    color: darkblue;
+}
+p:hover {
+    color: darkgreen;
+}
+
+.container #hello {
+    color:green
+}
+.container {
+    color: blue;
+}
+#hello {
+    color:red !important
+}
+div > p {
+    color: yellow;
+}
+
+a + p {
+    font-family: 'Oxygen', sans-serif;
+}
+
+ol > li {
+    display: inline;
+}
