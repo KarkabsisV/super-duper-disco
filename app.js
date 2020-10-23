@@ -31,6 +31,8 @@ const bodyparser = require('body-parser');
 
 const app = exspress();
 
+const PORT = process.env.PORT || 3000;
+
 app.use(bodyparser.urlencoded({extended: false}));
 
 app.use(bodyparser.json());
@@ -56,4 +58,4 @@ app.post('/comments', (req, res, next) => {
 // });
 
 
-app.listen(4000);
+app.listen(PORT);
